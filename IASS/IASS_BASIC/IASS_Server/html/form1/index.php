@@ -17,7 +17,8 @@
 
     $SensorsList = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ];
     
-
+    $deviceSensorList = json_decode($jsonSensors, TRUE);
+    
     require "../conn/pdo.php";
     require "../conn/conninfo.php";
 	require "functions.php";
@@ -176,8 +177,6 @@ a:hover, a:visited, a:link, a:active
 					<tr>
 						<td align='right'></td>
 <?php
-$deviceSensorList = json_decode($jsonSensors, TRUE);
-
 //Print table header columns
 foreach($deviceSensorList['sensors'] as $key=>$val){
 	
